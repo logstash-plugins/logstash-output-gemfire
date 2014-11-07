@@ -23,7 +23,7 @@ class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
   # The path to a GemFire client cache XML file.
   #
   # Example:
-  #
+  # [source,xml]
   #      <client-cache>
   #        <pool name="client-pool">
   #            <locator host="localhost" port="31331"/>
