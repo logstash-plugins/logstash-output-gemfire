@@ -15,7 +15,6 @@ require "logstash/namespace"
 class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
 
   config_name "gemfire"
-  milestone 1
 
   # Your client cache name
   config :cache_name, :validate => :string, :default => "logstash"
