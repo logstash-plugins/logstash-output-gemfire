@@ -95,9 +95,9 @@ class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
   end
 
   public
-  def teardown
+  def close
     @cache.close if @cache
     @cache = nil
     finished
-  end # def teardown
+  end # def close
 end # class LogStash::Outputs::Gemfire
