@@ -98,6 +98,5 @@ class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
   def close
     @cache.close if @cache
     @cache = nil
-    finished
   end # def close
 end # class LogStash::Outputs::Gemfire
