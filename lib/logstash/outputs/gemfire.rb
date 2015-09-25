@@ -61,14 +61,10 @@ class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
       @logger.debug("Created cache #{@cache.inspect}")
 
     rescue => e
-      if terminating?
-        return
-      else
-        @logger.error("Gemfire connection error (during connect), will reconnect",
-                      :exception => e, :backtrace => e.backtrace)
-        sleep(1)
-        retry
-      end
+      @logger.error("Gemfire connection error (during connect), will reconnect",
+              :exception => e, :backtrace => e.backtrace)
+      Stud.stoppable_sleep(1) { stop? }
+      retry if !stop?
     end
 
     @region = @cache.getRegion(@region_name);
@@ -98,6 +94,5 @@ class LogStash::Outputs::Gemfire < LogStash::Outputs::Base
   def close
     @cache.close if @cache
     @cache = nil
-    finished
   end # def close
 end # class LogStash::Outputs::Gemfire
