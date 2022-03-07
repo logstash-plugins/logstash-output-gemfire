@@ -1,3 +1,6 @@
+## 2.0.8
+  - random doc edit [#6](https://api.github.com/repos/logstash-plugins/logstash-output-gemfire/pulls/6)
+
 ## 2.0.7
   - Docs: Set the default_codec doc attribute.
 
