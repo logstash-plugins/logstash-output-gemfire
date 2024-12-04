@@ -1,3 +1,6 @@
+## Unreleased
+  - Removed `jar-dependencies` dependency [#7](https://github.com/logstash-plugins/logstash-output-gemfire/pull/7)
+
 ## 2.0.7
   - Docs: Set the default_codec doc attribute.
 
